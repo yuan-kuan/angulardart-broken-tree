@@ -1,4 +1,1 @@
-An absolute bare-bones web app.
-
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
+An absolute leanest project to reproduce the issue: https://github.com/dart-lang/angular_components/issues/478
