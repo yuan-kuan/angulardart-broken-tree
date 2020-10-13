@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
 
@@ -9,6 +11,7 @@ import 'package:angular_components/angular_components.dart';
   <div class="shadow" style="width: 400px; margin: 24px;">
         <div style="padding: 8px">
           <strong>Selected:</strong> {{singleSelection.selectedValues}}
+          <button (click)="randomSelect()">Random Select</button>
         </div>
       </div>
       <div class="shadow" style="width: 400px; margin: 24px;">
@@ -21,6 +24,15 @@ import 'package:angular_components/angular_components.dart';
 class AppComponent {
   final SelectionOptions nestedOptions = _nestedOptions;
   final SelectionModel singleSelection = SelectionModel.single();
+
+  void randomSelect() {
+    var r = Random();
+    singleSelection.select(_commonParentChildrenMap.entries
+        .elementAt(r.nextInt(_commonParentChildrenMap.length))
+        .value
+        .first
+        .elementAt(0));
+  }
 }
 
 final _commonParentChildrenMap = {
